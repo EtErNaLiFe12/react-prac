@@ -3,6 +3,7 @@ import Hello from './Hello';
 import Wrapper from './Wrapper';
 import './App.css'
 import Counter from './Counter';
+import InputSample from './InputSample';
 
 
 function App() {
@@ -21,9 +22,11 @@ function App() {
        <Hello color="pink"/>
      </Wrapper>
      <Counter/>
+    
      {/* <button style={{width:50, height:20}}>click</button> */}
      <div style={style}>{message}</div>
      <div className="gray-box">{message}</div>
+     <InputSample/>
     </>
   );
 }
