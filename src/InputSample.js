@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 export default function InputSample() {
 
@@ -25,7 +25,7 @@ export default function InputSample() {
     name: '',
     nickname: '',
   }); // 객체 상태를 업데이트 해줌
-
+  const nameInput = useRef();
   const {name, nickname} = inputs; // 비구조 할당
 
   const onChange = (e) => {
@@ -41,11 +41,12 @@ export default function InputSample() {
     setInputs({
       name: '',
       nickname: '',
-    })
+    });
+    nameInput.current.focus();
   }
   return (
     <div>
-     <input name="name" placeholder="이름" onChange={onChange} value={name}/>
+     <input name="name" placeholder="이름" onChange={onChange} value={name} ref={nameInput}/>
      <input name="nickname" placeholder="닉네임" onChange={onChange} value={nickname}/>
      <button onClick={onReset}>초기화</button>
      <div>
